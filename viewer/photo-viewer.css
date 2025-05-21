@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "DrukWideCyr";
+  src: url("JetBrainsMono-Medium.woff2") format("woff2");
+}
+
+body {
+  font-family: "DrukWideCyr", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #333 0%, #222 100%);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loggoo {
+  width: 100px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.loggoo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #444, #333);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 20px;
+  margin: 0 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.viewer-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.photo-viewer {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.full-photo {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.full-photo.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
+.photo-title {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  margin: 25px 0 15px;
+}
+
+.photo-description {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+.photo-meta {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nav-button {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "DrukWideCyr", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.back-to-gallery {
+  display: inline-block;
+  margin-top: 20px;
+  color: #1a1a2e;
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  padding-bottom: 3px;
+}
+
+.back-to-gallery:hover {
+  color: #e94560;
+  border-bottom-color: #e94560;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.photo-viewer {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .viewer-container {
+    padding: 0 15px;
+    margin: 30px auto;
+  }
+  
+  .photo-viewer {
+    padding: 20px;
+  }
+  
+  .full-photo {
+    max-height: 60vh;
+  }
+  
+  .photo-title {
+    font-size: 1.5rem;
+  }
+  
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

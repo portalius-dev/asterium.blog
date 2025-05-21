@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="photo-viewer.css">
+  <title>prtlsBlog - Просмотр фото</title>
+</head>
+<body>
+  <div class="header">
+    <img src="ALogo.png" class="loggoo" alt="prtlsBlog Logo">
+  </div>
+  
+  <div class="nav">
+    <a href="/welcome.html">Главная</a>
+    <a href="/index.html">Статьи</a>
+    <a href="/photos.html">Фото</a>
+  </div>
+  
+  <div class="viewer-container">
+    <div class="photo-viewer">
+      <img 
+        src="/photos/see (1).jpg" 
+        alt="Цветущая сирень" 
+        class="full-photo" 
+        id="fullPhoto"
+        onclick="toggleZoom()"
+      >
+      <h2 class="photo-title">Цветущая сирень</h2>
+      <p class="photo-description">
+        Этот снимок я сделал по просьбе Мамы пока мы шли в магазин.
+        Сирень - очень красивый цветок!
+      </p>
+      <div class="photo-meta">
+        <span>Дата: 17.05.2025</span>
+        <span>Камера: Redmi 14C</span>
+      </div>
+      
+      <a href="/photos.html" class="back-to-gallery">← Вернуться в галерею</a>
+    </div>
+  </div>
+
+  <script>
+    
+    // Здесь можно добавить логику для навигации между фото
+    document.getElementById('nextButton').addEventListener('click', function() {
+      // В реальном проекте здесь будет переход к следующему фото
+      alert('В реальном проекте здесь будет переход к следующему фото');
+    });
+    
+    document.getElementById('prevButton').addEventListener('click', function() {
+      // В реальном проекте здесь будет переход к предыдущему фото
+      alert('В реальном проекте здесь будет переход к предыдущему фото');
+    });
+  </script>
+</body>
+</html>
